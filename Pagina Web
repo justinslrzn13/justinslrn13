@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Justin Lopez | Desarrollador y Consultor CRM</title>
+<meta name="description" content="Desarrollador y Administrador Salesforce certificado. Automatización, integraciones API y desarrollo a medida. / Certified Salesforce Developer and Administrator. Automation, API integrations and custom development.">
+<style>
+:root{--bg:#0b1b33;--bg2:#10294d;--card:rgba(61,121,196,.14);--line:#2f5f9e;--accent:#6cc4ff;--text:#e6f1ff;--muted:#9fc3ee}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);min-height:100vh;color:var(--text);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+/* language switch */
+body[data-lang="es"] .en,body[data-lang="en"] .es{display:none!important}
+header{position:sticky;top:0;z-index:5;background:rgba(11,27,51,.88);backdrop-filter:blur(8px);border-bottom:1px solid rgba(47,95,158,.5)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.5px;text-decoration:none}
+.logo b{color:var(--accent)}
+nav{display:flex;align-items:center;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:#fff}
+.lang{display:flex;border:1.5px solid var(--line);border-radius:30px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:600 13px inherit;font-family:inherit;padding:6px 12px;cursor:pointer}
+.lang button.on{background:var(--accent);color:var(--bg)}
+.hero{padding:90px 0 70px}
+.tag{font-size:14px;letter-spacing:4px;color:var(--accent);font-weight:600}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.05;font-weight:800;letter-spacing:-1.5px;margin-top:14px}
+h1 span{color:var(--accent)}
+.sub{font-size:clamp(18px,2.6vw,24px);color:#cfe3ff;margin-top:18px;max-width:680px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{border:1.5px solid #3d79c4;background:rgba(61,121,196,.18);padding:6px 16px;border-radius:30px;font-size:15px}
+.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.btn{display:inline-block;padding:13px 26px;border-radius:30px;font-weight:700;text-decoration:none;font-size:16px}
+.btn.p{background:var(--accent);color:var(--bg)}
+.btn.p:hover{background:#8fd3ff}
+.btn.s{border:2px solid var(--line);color:var(--text)}
+.btn.s:hover{background:var(--card)}
+section{padding:64px 0}
+h2{font-size:clamp(28px,4vw,38px);font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:34px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:26px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:#cfe3ff;font-size:16px}
+.ico{width:42px;height:42px;border-radius:12px;background:var(--accent);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;margin-bottom:14px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.step .n{width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--bg);font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{color:#cfe3ff;font-size:15px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+@media(max-width:760px){.about{grid-template-columns:1fr}nav a.hide{display:none}}
+.about p{color:#cfe3ff;margin-bottom:14px}
+.facts{list-style:none}
+.facts li{padding:11px 0;border-bottom:1px solid rgba(47,95,158,.5);font-size:16px}
+.facts li:last-child{border:0}
+.facts b{color:var(--accent);display:block;font-size:13px;letter-spacing:2px;font-weight:600}
+.cta{text-align:center;background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:54px 24px}
+.cta p{color:#cfe3ff;max-width:560px;margin:10px auto 26px}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:34px 20px 44px}
+</style>
+</head>
+<body data-lang="es">
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Justin <b>Lopez</b></a>
+    <nav>
+      <a class="hide" href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
+      <a class="hide" href="#proceso"><span class="es">Proceso</span><span class="en">Process</span></a>
+      <a class="hide" href="#sobre-mi"><span class="es">Sobre mí</span><span class="en">About</span></a>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" id="b-es" class="on" onclick="setLang('es')">ES</button>
+        <button type="button" id="b-en" onclick="setLang('en')">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+<div class="hero">
+  <div class="tag"><span class="es">CRM · AUTOMATIZACIÓN · INTEGRACIONES API</span><span class="en">CRM · AUTOMATION · API INTEGRATIONS</span></div>
+  <h1>Justin Lopez</h1>
+  <p class="sub">
+    <span class="es">Desarrollador y Administrador <b>Salesforce</b> certificado. Convierto procesos manuales en sistemas que funcionan solos.</span>
+    <span class="en">Certified <b>Salesforce</b> Developer and Administrator. I turn manual processes into systems that run on their own.</span>
+  </p>
+  <div class="chips">
+    <span class="chip">Salesforce Flow</span><span class="chip">Apex</span><span class="chip">OmniStudio</span><span class="chip">REST API</span><span class="chip">MuleSoft</span>
+  </div>
+  <div class="btns">
+    <a class="btn p" href="https://www.linkedin.com/in/justin-solorzano-588858321/" target="_blank" rel="noopener"><span class="es">Contáctame en LinkedIn</span><span class="en">Contact me on LinkedIn</span></a>
+    <a class="btn s" href="#servicios"><span class="es">Ver servicios</span><span class="en">See services</span></a>
+  </div>
+</div>
+
+<section id="servicios">
+  <h2><span class="es">Servicios</span><span class="en">Services</span></h2>
+  <p class="lead"><span class="es">Todo lo que tu equipo hace a mano y se repite, se puede automatizar. Estas son las áreas en las que trabajo.</span><span class="en">Anything your team does by hand and repeats can be automated. These are the areas I work in.</span></p>
+  <div class="grid">
+    <div class="card"><div class="ico">1</div>
+      <h3><span class="es">Automatización con Salesforce Flow</span><span class="en">Salesforce Flow Automation</span></h3>
+      <p><span class="es">Flows por registro, programados, con pantallas y autolanzados; procesos de aprobación, validaciones, notificaciones y gestión de etapas.</span><span class="en">Record-triggered, scheduled, screen and autolaunched Flows; approval processes, validation rules, notifications and stage management.</span></p></div>
+    <div class="card"><div class="ico">2</div>
+      <h3><span class="es">Desarrollo Apex y LWC</span><span class="en">Apex and LWC Development</span></h3>
+      <p><span class="es">Lógica a medida con Apex y SOQL, procesamiento masivo de datos (batch), generación de archivos Excel, versionado de documentos y componentes Lightning.</span><span class="en">Custom logic with Apex and SOQL, bulk data processing (batch), Excel file generation, document versioning and Lightning components.</span></p></div>
+    <div class="card"><div class="ico">3</div>
+      <h3><span class="es">Integraciones y API</span><span class="en">Integrations and APIs</span></h3>
+      <p><span class="es">Conexión de Salesforce con otros sistemas mediante REST API y experiencia en proyectos con integraciones como MuleSoft y NEO.</span><span class="en">Connecting Salesforce with other systems through REST API, with experience in integration projects using MuleSoft and NEO.</span></p></div>
+    <div class="card"><div class="ico">4</div>
+      <h3>OmniStudio</h3>
+      <p><span class="es">OmniScripts, Data Mappers e Integration Procedures para experiencias guiadas y flujos de datos entre sistemas.</span><span class="en">OmniScripts, Data Mappers and Integration Procedures for guided experiences and data flows between systems.</span></p></div>
+    <div class="card"><div class="ico">5</div>
+      <h3><span class="es">Administración y seguridad CRM</span><span class="en">CRM Administration and Security</span></h3>
+      <p><span class="es">Usuarios, perfiles, roles, permission sets, visibilidad de datos, Sales Cloud y Service Cloud, reportes y soporte de incidentes.</span><span class="en">Users, profiles, roles, permission sets, data visibility, Sales Cloud and Service Cloud, reports and incident support.</span></p></div>
+    <div class="card"><div class="ico">6</div>
+      <h3><span class="es">Desarrollo a medida y migraciones</span><span class="en">Custom Development and Migrations</span></h3>
+      <p><span class="es">Soluciones ajustadas a tu negocio, despliegues entre sandbox y producción, análisis de causa raíz y documentación técnica clara.</span><span class="en">Solutions tailored to your business, sandbox-to-production deployments, root cause analysis and clear technical documentation.</span></p></div>
+  </div>
+</section>
+
+<section id="proceso">
+  <h2><span class="es">Cómo trabajo</span><span class="en">How I work</span></h2>
+  <p class="lead"><span class="es">Un proceso simple y claro, para que sepas qué esperar en cada etapa.</span><span class="en">A simple, clear process so you know what to expect at every stage.</span></p>
+  <div class="steps">
+    <div class="card step"><div class="n">1</div><h3><span class="es">Diagnóstico</span><span class="en">Discovery</span></h3><p><span class="es">Entiendo tu proceso actual y dónde se pierde tiempo.</span><span class="en">I learn your current process and where time is lost.</span></p></div>
+    <div class="card step"><div class="n">2</div><h3><span class="es">Plan</span><span class="en">Plan</span></h3><p><span class="es">Te envío un plan con alcance, prioridades y plazos.</span><span class="en">I send a plan with scope, priorities and timeline.</span></p></div>
+    <div class="card step"><div class="n">3</div><h3><span class="es">Construcción y pruebas</span><span class="en">Build and test</span></h3><p><span class="es">Desarrollo en sandbox y pruebo antes de pasar a producción.</span><span class="en">I build in a sandbox and test before going live.</span></p></div>
+    <div class="card step"><div class="n">4</div><h3><span class="es">Entrega y documentación</span><span class="en">Handoff and docs</span></h3><p><span class="es">Documento todo para que tu equipo pueda mantenerlo.</span><span class="en">I document everything so your team can maintain it.</span></p></div>
+  </div>
+</section>
+
+<section id="sobre-mi">
+  <h2><span class="es">Sobre mí</span><span class="en">About me</span></h2>
+  <div class="about">
+    <div>
+      <p><span class="es">Soy desarrollador Salesforce con más de 1.5 años de experiencia construyendo y manteniendo soluciones empresariales en Salesforce CRM, incluyendo la administración de usuarios a nivel de plataforma para un banco.</span><span class="en">I'm a Salesforce developer with over 1.5 years of experience building and maintaining enterprise solutions on Salesforce CRM, including platform-level user administration for a bank.</span></p>
+      <p><span class="es">Antes de la tecnología trabajé en cobranza y asistencia legal, lo que me enseñó a dar seguimiento con disciplina, documentar con orden y comunicarme claro con clientes. Busco causas raíz en lugar de parches rápidos.</span><span class="en">Before tech, I worked in collections and legal support, which taught me disciplined follow-up, organized documentation and clear client communication. I look for root causes, not quick patches.</span></p>
+      <p><span class="es">Trabajo desde Nicaragua (UTC-6), con horario compatible con Estados Unidos y Latinoamérica.</span><span class="en">I work from Nicaragua (UTC-6), with hours compatible with the US and Latin America.</span></p>
+    </div>
+    <ul class="facts card">
+      <li><b><span class="es">CERTIFICACIÓN</span><span class="en">CERTIFICATION</span></b>Salesforce Certified Administrator (2025)</li>
+      <li><b><span class="es">IDIOMAS</span><span class="en">LANGUAGES</span></b><span class="es">Español nativo · Inglés avanzado</span><span class="en">Native Spanish · Advanced English</span></li>
+      <li><b><span class="es">ESTUDIOS</span><span class="en">EDUCATION</span></b><span class="es">Ingeniería Electrónica (UNI), 4.º año</span><span class="en">Electronic Engineering (UNI), 4th year</span></li>
+      <li><b><span class="es">UBICACIÓN</span><span class="en">LOCATION</span></b><span class="es">Nicaragua · Trabajo remoto</span><span class="en">Nicaragua · Remote work</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="cta">
+    <h2><span class="es">¿Tienes un proceso que quieras automatizar?</span><span class="en">Have a process you want to automate?</span></h2>
+    <p><span class="es">Cuéntame en qué consiste y te respondo con una idea clara de cómo resolverlo y un estimado.</span><span class="en">Tell me about it and I'll reply with a clear idea of how to solve it and an estimate.</span></p>
+    <a class="btn p" href="https://www.linkedin.com/in/justin-solorzano-588858321/" target="_blank" rel="noopener"><span class="es">Escríbeme por LinkedIn</span><span class="en">Message me on LinkedIn</span></a>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>© 2026 Justin Lopez · <span class="es">Desarrollador y Consultor CRM</span><span class="en">Developer and CRM Consultant</span></footer>
+
+<script>
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  document.documentElement.lang=l;
+  document.getElementById('b-es').classList.toggle('on',l==='es');
+  document.getElementById('b-en').classList.toggle('on',l==='en');
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+(function(){
+  var l=null;
+  try{l=localStorage.getItem('lang')}catch(e){}
+  if(!l){l=((navigator.language||'es').toLowerCase().indexOf('es')===0)?'es':'en'}
+  setLang(l);
+})();
+</script>
+</body>
+</html>
